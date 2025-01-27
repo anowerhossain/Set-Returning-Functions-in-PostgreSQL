@@ -2,7 +2,7 @@
 
 PostgreSQL provides powerful **Set-Returning Functions** (SRFs) that allow you to return multiple rows from a function. SRFs can be used in `SELECT`, `FROM`, and even in `JOIN` clauses. They are perfect for generating series, unnesting arrays, and expanding JSON data. Let’s explore some amazing examples! 🔍
 
-### 1.1 Generate a Series of Numbers 🔢 `generate_series()` 🧑‍💻
+### 1.1 Generate a Series of Numbers 🔢 with `generate_series()` 🧑‍💻
 
 `generate_series()` is one of the most versatile SRFs in PostgreSQL. It generates a series of values, which can be numbers, dates, or timestamps.
 
@@ -11,6 +11,7 @@ Example:
 SELECT generate_series(1, 5); 
 ```
 - Output
+
 | number |
 |--------|
 | 1      |
@@ -21,7 +22,7 @@ SELECT generate_series(1, 5);
 
 - This is helpful for generating a sequence of values for looping operations or creating synthetic data. For instance, you can use it to generate a list of IDs for testing or a sequence of product numbers.
 
-## 1.2 Generate a Series of Dates 📅 with `generate_series()` 
+### 1.2 Generate a Series of Dates 📅 with `generate_series()` 
 - Here, we generate a series of daily dates starting from January 1, 2025, to January 10, 2025.
 
 ```sql
@@ -44,7 +45,7 @@ SELECT generate_series('2025-01-01'::date, '2025-01-10'::date, '1 day'::interval
 
 - This can be used for generating date ranges for reporting or analysis purposes, such as when you want to generate a list of dates for a time series analysis, fill missing dates in a dataset, or create calendar-based reports. 📅
 
-## 1.3 Generate a Series of Timestamps 🕰️ with `generate_series()`
+### 1.3 Generate a Series of Timestamps 🕰️ with `generate_series()`
 - Here, we generate a series of timestamps starting from 2025-01-01 00:00:00 to 2025-01-01 02:00:00, with a 1-hour interval.
 
 ```sql
